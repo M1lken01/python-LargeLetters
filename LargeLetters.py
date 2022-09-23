@@ -264,5 +264,20 @@ def letter(letter, separator = " ", width = 10):
 def word(word, separator = " ", width = 10):
     converted = ""
     for x in word.lower():
-        converted += letter(x, separator)
+        converted += letter(x, separator, width)
     return converted
+
+def oneline(word, separator = " ", width = 2):
+    line = 0
+    converted = ["","","","","","",""]
+    for x in word.lower():
+        line = 0
+        for item in letters[x].split('\n'):
+            lines = item.replace('x', f"{x.upper()*4}").replace(' ', f"{separator*4}").replace('-', separator*width)
+            converted[line] += lines
+            line += 1
+    line = 0
+    for item in converted:
+        converted[line] += '\n'+item
+        line += 1
+    return '\n'.join(converted)
