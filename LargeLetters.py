@@ -1,3 +1,4 @@
+#4d 69 6c 6b 65 6e
 letters = {
 "a": """-     -
 - xxx -
@@ -181,17 +182,87 @@ letters = {
 - x   -
 -xxxxx-
 -     -""",
+"1": """-     -
+-  x  -
+- xx  -
+-  x  -
+-  x  -
+- xxx -
+-     -""",
+"2": """-     -
+-xxxx -
+-    x-
+- xxx -
+-x    -
+-xxxxx-
+-     -""",
+"3": """-     -
+-xxxx -
+-    x-
+-xxxx -
+-    x-
+-xxxx -
+-     -""",
+"4": """-     -
+-x   x-
+-x   x-
+- xxxx-
+-    x-
+-    x-
+-     -""",
+"5": """-     -
+-xxxxx-
+-x    -
+-xxxx -
+-    x-
+-xxxx -
+-     -""",
+"6": """-     -
+- xxx -
+-x    -
+-xxxx -
+-x   x-
+- xxx -
+-     -""",
+"7": """-     -
+-xxxxx-
+-    x-
+-   x -
+-  x  -
+-  x  -
+-     -""",
+"8": """-     -
+- xxx -
+-x   x-
+- xxx -
+-x   x-
+- xxx -
+-     -""",
+"9": """-     -
+- xxx -
+-x   x-
+- xxx -
+-    x-
+- xxx -
+-     -""",
+"0": """-     -
+- xxx -
+-x   x-
+-x   x-
+-x   x-
+- xxx -
+-     -""",
 }
 
 def letter(letter, separator = " ", width = 10):
     converted = ""
-    for item in letters[letter].split('\n'):
+    for item in letters[letter.lower()].split('\n'):
         line = item.replace('x', f"{letter.upper()*4}").replace(' ', f"{separator*4}").replace('-', separator*width)
         converted += f"{line}\n{line}\n"
     return converted
 
 def word(word, separator = " ", width = 10):
     converted = ""
-    for x in word:
+    for x in word.lower():
         converted += letter(x, separator)
     return converted
