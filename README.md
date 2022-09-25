@@ -1,5 +1,5 @@
 # python-LargeLetters
- 
+
 Makes large letters.
 
 ## Getting Started
@@ -7,6 +7,10 @@ Makes large letters.
 ### Installing
 
 * Download LargeLetters.py
+
+* Move it to your project folder
+
+* In your python script write:
 
 ```py
 import LargeLetters as ll
